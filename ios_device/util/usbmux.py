@@ -22,7 +22,7 @@ class USBMux:
             self.version = 0
             self.protoclass = BinaryProtocol
         except MuxVersionError:
-            self.listener = MuxConnection(socket_path, Plis)
+            self.listener = MuxConnection(socket_path, PlistProtocol)
 
 
 class MuxConnection:
@@ -48,7 +48,7 @@ class MuxConnection:
                 raise MuxError('Invaild packet type received: %d' % resp)
 
     def _processpacket(self):
-        resp, tag, data = self.proto.getpacket
+        resp, tag, data = self.proto.getpacket()
         if resp == self.proto.TYPE_DEVICE_ADD:
             self.devices.append(
                 MuxDevice(
@@ -176,3 +176,16 @@ class PlistProtocol(BinaryProtocol):
 
     def _pack(self, req: int, payload: bytes) -> bytes:
         return payload
+
+    def _unpack(self, resp: int, payload: bytes) -> bytes:
+        return payload
+
+    def sendpacket(self, req, tag, payload: Optional[Mapping[str, Any]] = None):
+        payload = payload or {}
+        payload['ClientVersionString'] = 'qt4i-usbmuxd'
+        if isinstance(req, int):
+            req = [self.TYPE_CONNECT, self.TYPE_LISTEN][req - 2]
+            payload['MessageType'] = req
+            payload['ProgName'] = 'tcprelay'
+            log.debug(f'发送 Plist:{payload}')
+            wrapped_payload = plistlib.dumps(payload)
