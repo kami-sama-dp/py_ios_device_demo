@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b10c4432-38d6-408e-83b8-8fe06cdea574" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios_device/util/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/ios_device/util/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios_device/util/usbmux.py" beforeDir="false" afterPath="$PROJECT_DIR$/ios_device/util/usbmux.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +95,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617877413153" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1617959338359">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1618200612995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617959338359" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618200612995" />
   </component>
 </project>

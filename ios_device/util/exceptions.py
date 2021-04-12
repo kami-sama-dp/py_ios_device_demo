@@ -9,3 +9,7 @@ class MuxError(PyPodException):
 
 class MuxVersionError(MuxError):
     pass
+
+
+class NoMuxDeviceFound(MuxError):
+    pass
